@@ -5,7 +5,7 @@ html, body {
     background: linear-gradient(90deg, #141e30, #243b55);
 }
 
-/* ===== NAVBAR ===== */
+/* Navbar*/
 .custom-navbar {
     background: linear-gradient(90deg, #141e30, #243b55);
     padding: 15px;
@@ -26,7 +26,7 @@ html, body {
     transform: translateY(-2px);
 }
 
-/* ===== CAROUSEL ===== */
+/* Carousel*/
 .carousel-item,
 .carousel-img {
     height: 550px;
@@ -43,7 +43,7 @@ html, body {
     text-shadow: 0 1px 4px rgba(0,0,0,0.8);
 }
 
-/* ===== SEARCH ===== */
+/* Search */
 .search-section {
     padding-top: 3rem;
     padding-bottom: 3rem;
@@ -64,7 +64,7 @@ html, body {
     border-radius: 20px;
 }
 
-/* ===== CLEAR BUTTON ===== */
+/* ClsButton */
 .clear-btn {
     position: absolute;
     top: 50%;
@@ -82,7 +82,7 @@ html, body {
     color: white;
 }
 
-/* ===== MOVIE GRID CARDS ===== */
+/* GridCards */
 .movie-card {
     transition: transform 0.3s, box-shadow 0.3s;
     border: 1px solid rgba(255,255,255,0.08);
@@ -93,13 +93,13 @@ html, body {
     box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5) !important;
 }
 
-/* ===== SLIDER WRAPPER ===== */
+/* Slider */
 .slider-wrapper {
     position: relative;
     padding: 0 30px;
 }
 
-/* ===== SLIDER TRACK ===== */
+/* Slider track */
 .movie-slider {
     display: flex;
     overflow-x: auto;
@@ -114,7 +114,7 @@ html, body {
     display: none;
 }
 
-/* ===== SLIDER CARDS ===== */
+/* SliderCards */
 .movie-slider .slider-card {
     min-width: 200px;
     flex: 0 0 auto;
@@ -132,7 +132,7 @@ html, body {
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
 }
 
-/* ===== SLIDER ARROW BUTTONS ===== */
+/* Slider Arrows btn */
 .slide-btn {
     position: absolute;
     top: 40%;
@@ -156,14 +156,14 @@ html, body {
 .slide-btn.left  { left: 0; }
 .slide-btn.right { right: 0; }
 
-/* ===== TRAILER MODAL ===== */
+/* Trailer modal */
 .modal-content.bg-dark {
     border: 1px solid rgba(255,255,255,0.1);
     border-radius: 12px;
     overflow: hidden;
 }
 
-/* ===== FOOTER SEPARATOR ===== */
+/* footer separation */
 .footer-separator {
     border: none;
     height: 2px;
@@ -172,14 +172,14 @@ html, body {
     opacity: 0.5;
 }
 
-/* ===== FOOTER ===== */
+/* footer */
 footer {
     background: linear-gradient(90deg, #141e30, #243b55);
     padding: 20px 0;
     color: #fff;
 }
 
-/* ===== BACK TO TOP ===== */
+/* backtotop */
 #backToTop {
     position: fixed;
     bottom: 30px;
@@ -204,9 +204,7 @@ footer {
 #backToTop:hover  { transform: scale(1.1); }
 #backToTop.show   { opacity: 1; visibility: visible; }
 
-/* ===================================================
-   RESPONSIVE — tablet (max 768px)
-   =================================================== */
+/* responsive for tablet */
 @media (max-width: 768px) {
     .carousel-item,
     .carousel-img {
@@ -222,9 +220,7 @@ footer {
     }
 }
 
-/* ===================================================
-   RESPONSIVE — mobile (max 576px)
-   =================================================== */
+/* for mobile */
 @media (max-width: 576px) {
     /* Carousel */
     .carousel-item,
@@ -241,12 +237,12 @@ footer {
         gap: 10px;
     }
 
-    /* Slider wrapper — less side padding so cards have more room */
+    /* Slider wrapper */
     .slider-wrapper {
         padding: 0 36px;
     }
 
-    /* Arrow buttons — smaller */
+    /* Arrow buttons smaller */
     .slide-btn {
         width: 28px;
         height: 28px;
