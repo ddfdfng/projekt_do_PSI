@@ -3,9 +3,156 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>OceanTrailerów – Film</title>
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/style_movie.css">
 </head>
 <body>
-    
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark custom-navbar shadow">
+        <div class="container">
+            <a class="navbar-brand fw-bold fs-3" href="index.html">🎬 OceanTrailerów</a>
+            <div class="ms-auto">
+                <a href="index.html" class="back-btn">
+                    <i class="bi bi-arrow-left"></i> Wróć do strony głównej
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Spinner -->
+    <div id="loadingSpinner">
+        <div class="text-center text-white">
+            <div class="spinner-border text-warning mb-3" style="width:3rem;height:3rem;"></div>
+            <p class="opacity-75">Ładowanie...</p>
+        </div>
+    </div>
+
+    <!-- Main content -->
+    <div id="pageContent" style="display:none;">
+
+        <!-- Hero -->
+        <div class="detail-hero" id="heroSection">
+            <div class="container hero-content">
+                <div class="d-flex flex-column flex-md-row gap-4 align-items-start align-items-md-end">
+                    <img id="posterImg" src="" alt="Poster" class="detail-poster">
+                    <div>
+                        <div id="genreBadges" class="d-flex flex-wrap gap-2 mb-3"></div>
+                        <h1 id="movieTitle" class="text-white fw-bold mb-1" style="font-size:2.2rem;"></h1>
+                        <p id="movieTagline" class="text-warning fst-italic mb-3"></p>
+                        <div id="statsRow" class="d-flex flex-wrap gap-2 mb-3"></div>
+                        <p id="movieOverview" class="text-light" style="max-width:650px;line-height:1.7;"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container py-5">
+
+            <!-- Trailer -->
+            <div id="trailerSection" class="mb-5" style="display:none;">
+                <h2 class="section-title">🎬 Trailer</h2>
+                <div class="trailer-wrapper">
+                    <iframe id="trailerFrame" width="100%" height="450"
+                        allowfullscreen style="display:block;border:none;"></iframe>
+                </div>
+            </div>
+
+            <!-- Details, production -->
+            <div class="row g-4 mb-5">
+                <div class="col-md-6">
+                    <h2 class="section-title">📋 Szczegóły</h2>
+                    <table class="table table-dark table-borderless" id="detailsTable"></table>
+                </div>
+                <div class="col-md-6" id="productionSection" style="display:none;">
+                    <h2 class="section-title">🎥 Produkcja</h2>
+                    <div id="productionCompanies" class="d-flex flex-wrap gap-3 align-items-center"></div>
+                </div>
+            </div>
+
+            <!-- Cast -->
+            <div class="mb-5" id="castSection" style="display:none;">
+                <h2 class="section-title">🎭 Obsada</h2>
+                <div class="cast-scroll" id="castContainer"></div>
+            </div>
+
+            <!-- Similar -->
+            <div class="mb-5" id="similarSection" style="display:none;">
+                <h2 class="section-title" id="similarTitle">🍿 Podobne filmy</h2>
+                <div class="similar-slider" id="similarContainer"></div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Footer separator -->
+    <hr class="footer-separator">
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white pt-5 pb-4" id="kontakt">
+        <div class="container">
+            <div class="row">
+
+                <!-- About -->
+                <div class="col-md-4 mb-4 text-center">
+                    <h4>OceanTrailerów</h4>
+                    <p>
+                        Strona z trailerami filmów z całego świata.
+                        Znajdziesz tu najnowsze premiery,
+                        popularne filmy i najlepsze zwiastuny.
+                    </p>
+                </div>
+
+                <!-- Contact form -->
+                <div class="col-md-4 mb-4 text-center">
+                    <h5>Kontakt</h5>
+                    <div class="mb-2">
+                        <input type="text" class="form-control" placeholder="Twoje imię">
+                    </div>
+                    <div class="mb-2">
+                        <input type="email" class="form-control" placeholder="Email">
+                    </div>
+                    <div class="mb-2">
+                        <textarea class="form-control" rows="3" placeholder="Twoja wiadomość"></textarea>
+                    </div>
+                    <button class="btn btn-primary w-100">Wyślij</button>
+                </div>
+
+                <!-- Social -->
+                <div class="col-md-4 mb-4 text-center">
+                    <h5>Social Media</h5>
+                    <p>Śledź nas:</p>
+                    <a class="text-white me-3 fs-4 text-decoration-none" href="#">
+                        <i class="bi bi-instagram"></i>
+                    </a>
+                    <a class="text-white me-3 fs-4 text-decoration-none" href="#">
+                        <i class="bi bi-facebook"></i>
+                    </a>
+                    <a class="text-white fs-4 text-decoration-none" href="#">
+                        <i class="bi bi-youtube"></i>
+                    </a>
+                </div>
+
+            </div>
+
+            <div class="text-center">© 2026 OceanTrailerów</div>
+        </div>
+    </footer>
+
+    <!-- Back to top -->
+    <button id="backToTop"><i class="bi bi-arrow-up"></i></button>
+
+    <!-- JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/api.js"></script>
+    <script src="js/movie_detail.js"></script>
+
 </body>
 </html>

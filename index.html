@@ -9,264 +9,193 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
     <!-- CSS connect-->
     <link rel="stylesheet" href="css/styles.css">
-    <!-- Font coonnect-->
+    <!-- Font connect-->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <!-- Header-nav-->
     <nav class="navbar navbar-expand-lg navbar-dark custom-navbar shadow">
-
-    <div class="container">
-
-        <a class="navbar-brand fw-bold fs-3">🎬 OceanTrailerów</a>
-
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-
-        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-
-            <ul class="navbar-nav">
-
-                <li class="nav-item">
-                    <a class="nav-link active" href="#">Główna</a>
-                </li>
-
-                <li class="nav-item">
-                    <a class="nav-link" href="#search">Wyszukiwanie</a>
-                </li>
-
-                <li class="nav-item">
-                    <a class="nav-link" href="#movies">Filmiki</a>
-                </li>
-
-                <li class="nav-item">
-                    <a class="nav-link" href="#kontakt">Kontakt</a>
-                </li>
-
-            </ul>
-
+        <div class="container">
+            <a class="navbar-brand fw-bold fs-3">🎬 OceanTrailerów</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#">Główna</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#search">Wyszukiwanie</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#movies">Filmiki</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#kontakt">Kontakt</a>
+                    </li>
+                </ul>
+            </div>
         </div>
-
-    </div>
-
     </nav>
 
     <!-- Carousel-->
     <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-inner" id="carouselInner"></div>
-    
         <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
             <span class="visually-hidden">Previous</span>
         </button>
-        
         <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
             <span class="carousel-control-next-icon" aria-hidden="true"></span>
             <span class="visually-hidden">Next</span>
         </button>
     </div>
 
-
-    <!-- Search Section-->
+    <!-- Search-->
     <section class="search-section py-5" id="search">
+        <div class="container">
 
-    <div class="container">
+            <h2 class="text-center mb-4 text-white">Znajdź film</h2>
 
-        <h2 class="text-center mb-4 text-white">Znajdź film</h2>
+            <div class="row justify-content-center g-3">
 
-        <!-- SEARCH INPUT -->
-        <div class="row justify-content-center mb-4">
+                <!-- Input -->
+                <div class="col-md-6 position-relative">
+                    <input
+                        class="form-control form-control-lg rounded-pill pe-5"
+                        id="searchInput"
+                        type="text"
+                        placeholder="🔎 Szukaj filmu lub serialu..."
+                    >
+                    <button id="clearBtn" class="clear-btn">
+                        <i class="bi bi-x-lg"></i>
+                    </button>
+                </div>
 
-            <div class="col-md-6">
-                <input 
-                    class="form-control form-control-lg rounded-pill" 
-                    id="searchInput" 
-                    type="text" 
-                    placeholder="🔎 Szukaj filmu lub serialu..."
-                >
+                <!-- FILTERS -->
+                <div class="col-12">
+                    <div class="row justify-content-center g-3">
+
+                        <div class="col-md-2 col-sm-4 col-6">
+                            <select class="form-select" id="typeFilter">
+                                <option value="movie">🎬 Movies</option>
+                                <option value="tv">📺 Series</option>
+                            </select>
+                        </div>
+
+                        <div class="col-md-2 col-sm-4 col-6">
+                            <select class="form-select" id="yearFilter">
+                                <option value="">Year</option>
+                                <option value="2025">2025</option>
+                                <option value="2024">2024</option>
+                                <option value="2023">2023</option>
+                                <option value="2022">2022</option>
+                            </select>
+                        </div>
+
+                        <div class="col-md-2 col-sm-4 col-6">
+                            <select class="form-select" id="ratingFilter">
+                                <option value="">Rating</option>
+                                <option value="8">⭐ 8+</option>
+                                <option value="7">⭐ 7+</option>
+                                <option value="6">⭐ 6+</option>
+                            </select>
+                        </div>
+
+                    </div>
+                </div>
+
             </div>
 
         </div>
-
-        <!-- FILTERS -->
-        <div class="row justify-content-center g-3">
-
-            <div class="col-md-2">
-                <select class="form-select" id="typeFilter">
-                    <option value="movie">🎬 Movies</option>
-                    <option value="tv">📺 Series</option>
-                </select>
-            </div>
-
-            <div class="col-md-2">
-                <select class="form-select" id="yearFilter">
-                    <option value="">Year</option>
-                    <option value="2025">2025</option>
-                    <option value="2024">2024</option>
-                    <option value="2023">2023</option>
-                    <option value="2022">2022</option>
-                </select>
-            </div>
-
-            <div class="col-md-2">
-                <select class="form-select" id="ratingFilter">
-                    <option value="">Rating</option>
-                    <option value="8">⭐ 8+</option>
-                    <option value="7">⭐ 7+</option>
-                    <option value="6">⭐ 6+</option>
-                </select>
-            </div>
-
-        </div>
-
-    </div>
-
-        
-
-    </div>
-
     </section>
 
     <!-- Movies Container -->
     <div class="container mt-4" id="movies">
-        <div class="row g-4" id="moviesContainer">
-        </div>
+        <div class="row g-4" id="moviesContainer"></div>
     </div>
 
     <!-- Popular Movies-->
-
     <section class="container my-5">
-
         <h2 class="text-white mb-4 text-center">🔥 Popular Movies</h2>
-
         <div class="slider-wrapper">
-
             <button class="slide-btn left" onclick="scrollSlider('popularMovies', -1)">
                 <i class="bi bi-chevron-left"></i>
             </button>
-
             <div class="movie-slider" id="popularMovies"></div>
-
             <button class="slide-btn right" onclick="scrollSlider('popularMovies', 1)">
                 <i class="bi bi-chevron-right"></i>
             </button>
-
         </div>
-
     </section>
 
-
-    <!-- Popular Series-->
-
+    <!-- Popular Serials-->
     <section class="container my-5">
-
         <h2 class="text-white mb-4 text-center">📺 Popular Series</h2>
-
         <div class="slider-wrapper">
-
             <button class="slide-btn left" onclick="scrollSlider('popularSeries', -1)">
                 <i class="bi bi-chevron-left"></i>
             </button>
-
             <div class="movie-slider" id="popularSeries"></div>
-
             <button class="slide-btn right" onclick="scrollSlider('popularSeries', 1)">
                 <i class="bi bi-chevron-right"></i>
             </button>
-
         </div>
-
     </section>
-    
 
-    <!-- trailer-modal-->
+    <!-- Separator -->
+    <hr class="footer-separator">
 
-    <div class="modal fade" id="trailerModal">
+    <!-- Footer-->
+    <footer class="bg-dark text-white pt-5 pb-4" id="kontakt">
+        <div class="container">
+            <div class="row">
 
-        <div class="modal-dialog modal-lg">
-            <div class="modal-content bg-dark">
-                <div class="modal-body">
-                    <iframe id="trailerFrame" width="100%" height="400" allowfullscreen></iframe>
+                <!-- About -->
+                <div class="col-md-4 mb-4 text-center">
+                    <h4>OceanTrailerów</h4>
+                    <p>
+                        Strona z trailerami filmów z całego świata.
+                        Znajdziesz tu najnowsze premiery,
+                        popularne filmy i najlepsze zwiastuny.
+                    </p>
                 </div>
+
+                <!-- Form -->
+                <div class="col-md-4 mb-4 text-center">
+                    <h5>Kontakt</h5>
+                    <div class="mb-2">
+                        <input type="text" class="form-control" placeholder="Twoje imię">
+                    </div>
+                    <div class="mb-2">
+                        <input type="email" class="form-control" placeholder="Email">
+                    </div>
+                    <div class="mb-2">
+                        <textarea class="form-control" rows="3" placeholder="Twoja wiadomość"></textarea>
+                    </div>
+                    <button class="btn btn-primary w-100">Wyślij</button>
+                </div>
+
+                <!-- Social -->
+                <div class="col-md-4 mb-4 text-center">
+                    <h5>Social Media</h5>
+                    <p>Śledź nas:</p>
+                    <a class="text-white me-3 fs-4 text-decoration-none" href="#">
+                        <i class="bi bi-instagram"></i>
+                    </a>
+                    <a class="text-white me-3 fs-4 text-decoration-none" href="#">
+                        <i class="bi bi-facebook"></i>
+                    </a>
+                    <a class="text-white fs-4 text-decoration-none" href="#">
+                        <i class="bi bi-youtube"></i>
+                    </a>
+                </div>
+
             </div>
+
+            <div class="text-center">© 2026 OceanTrailerów</div>
         </div>
-        
-
-    </div>
-
-    
-    <!-- Footer-->  
-    <footer class="bg-dark text-white mt-5 pt-5 pb-4" id="kontakt">
-
-    <div class="container">
-    
-    <div class="row">
-
-        <!-- ABOUT -->
-        <div class="col-md-4 mb-4 text-center">
-
-            <h4>OceanTrailerów</h4>
-            <p>
-                Strona z trailerami filmów z całego świata.
-                Znajdziesz tu najnowsze premiery,
-                popularne filmy i najlepsze zwiastuny.
-            </p>
-        </div>
-
-        <!-- CONTACT FORM -->
-        <div class="col-md-4 mb-4 text-center">
-
-            <h5>Kontakt</h5>
-
-            <form>
-                <div class="mb-2">
-                    <input type="text" class="form-control" placeholder="Twoje imię">
-                </div>
-
-                <div class="mb-2">
-                    <input type="email" class="form-control" placeholder="Email">
-                </div>
-
-                <div class="mb-2">
-                    <textarea class="form-control" rows="3" placeholder="Twoja wiadomość"></textarea>
-                </div>
-
-                <button class="btn btn-primary w-100">Wyślij</button>
-
-            </form>
-
-        </div>
-
-        <!-- SOCIAL -->
-        <div class="col-md-4 mb-4 text-center">
-
-            <h5>Social Media</h5>
-
-            <p>Śledź nas:</p>
-
-            <a class="text-white me-3 fs-4 text-decoration-none" href="#">
-                <i class="bi bi-instagram"></i>
-            </a>
-
-            <a class="text-white me-3 fs-4 text-decoration-none" href="#">
-                <i class="bi bi-facebook"></i>
-            </a>
-
-            <a class="text-white fs-4 text-decoration-none" href="#">
-                <i class="bi bi-youtube"></i>
-            </a>
-
-        </div>
-
-    </div>
-
-        <hr class="border-light">
-
-        <div class="text-center">© 2025 OceanTrailerów</div>
-
-    </div>
-
     </footer>
 
     <button id="backToTop">

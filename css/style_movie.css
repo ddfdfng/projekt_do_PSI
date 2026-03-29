@@ -1,0 +1,179 @@
+/* Hero backdrop */
+.detail-hero {
+    position: relative;
+    min-height: 480px;
+    background-size: cover;
+    background-position: center top;
+    display: flex;
+    align-items: flex-end;
+}
+
+.detail-hero::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, rgba(20,30,48,0.3) 0%, rgba(20,30,48,1) 100%);
+}
+
+.detail-hero .hero-content {
+    position: relative;
+    z-index: 2;
+    padding: 2rem 0;
+}
+
+/* Poster */
+.detail-poster {
+    width: 220px;
+    border-radius: 12px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.7);
+    flex-shrink: 0;
+}
+
+/* Badges */
+.genre-badge {
+    background: rgba(255,193,7,0.15);
+    color: #ffc107;
+    border: 1px solid rgba(255,193,7,0.4);
+    border-radius: 20px;
+    padding: 4px 14px;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+/* Stats row */
+.stat-pill {
+    background: rgba(255,255,255,0.07);
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 20px;
+    padding: 6px 16px;
+    font-size: 0.9rem;
+    color: #ccc;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.stat-pill span {
+    color: white;
+    font-weight: 600;
+}
+
+/* Trailer iframe */
+.trailer-wrapper {
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 8px 40px rgba(0,0,0,0.6);
+}
+
+/* Cast cards */
+.cast-card {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.2s;
+    min-width: 120px;
+}
+
+.cast-card:hover {
+    transform: translateY(-4px);
+}
+
+.cast-card img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+}
+
+.cast-card .cast-info {
+    padding: 8px;
+    font-size: 0.78rem;
+    color: #ccc;
+}
+
+.cast-card .cast-info strong {
+    display: block;
+    color: white;
+    font-size: 0.82rem;
+}
+
+/* Similar movies slider */
+.similar-slider {
+    display: flex;
+    gap: 16px;
+    overflow-x: auto;
+    padding-bottom: 10px;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+.similar-slider::-webkit-scrollbar { display: none; }
+
+.similar-card {
+    min-width: 150px;
+    cursor: pointer;
+    flex-shrink: 0;
+}
+
+.similar-card img {
+    width: 100%;
+    border-radius: 8px;
+    transition: transform 0.25s, box-shadow 0.25s;
+}
+
+.similar-card img:hover {
+    transform: scale(1.06);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.5);
+}
+
+.similar-card p {
+    font-size: 0.78rem;
+    color: #bbb;
+    margin-top: 6px;
+    text-align: center;
+}
+
+/* Section headings */
+.section-title {
+    color: white;
+    font-weight: 700;
+    font-size: 1.3rem;
+    margin-bottom: 1.2rem;
+    border-left: 4px solid #ffc107;
+    padding-left: 12px;
+}
+
+/* Back button */
+.back-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: #ffc107;
+    text-decoration: none;
+    font-weight: 600;
+    transition: gap 0.2s;
+}
+
+.back-btn:hover {
+    color: #ffc107;
+    gap: 12px;
+}
+
+/* Loading spinner */
+#loadingSpinner {
+    min-height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Cast scroll */
+.cast-scroll {
+    display: flex;
+    gap: 14px;
+    overflow-x: auto;
+    padding-bottom: 10px;
+    scrollbar-width: none;
+}
+
+.cast-scroll::-webkit-scrollbar { display: none; }
