@@ -5,7 +5,7 @@ html, body {
     background: linear-gradient(90deg, #141e30, #243b55);
 }
 
-/* Navbar*/
+/* navbar */
 .custom-navbar {
     background: linear-gradient(90deg, #141e30, #243b55);
     padding: 15px;
@@ -26,7 +26,7 @@ html, body {
     transform: translateY(-2px);
 }
 
-/* Carousel*/
+/* carousel */
 .carousel-item,
 .carousel-img {
     height: 550px;
@@ -43,7 +43,7 @@ html, body {
     text-shadow: 0 1px 4px rgba(0,0,0,0.8);
 }
 
-/* Search */
+/* swarch */
 .search-section {
     padding-top: 3rem;
     padding-bottom: 3rem;
@@ -64,7 +64,7 @@ html, body {
     border-radius: 20px;
 }
 
-/* ClsButton */
+/* clsbutton */
 .clear-btn {
     position: absolute;
     top: 50%;
@@ -82,7 +82,7 @@ html, body {
     color: white;
 }
 
-/* GridCards */
+/* movie grid cards */
 .movie-card {
     transition: transform 0.3s, box-shadow 0.3s;
     border: 1px solid rgba(255,255,255,0.08);
@@ -93,13 +93,13 @@ html, body {
     box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5) !important;
 }
 
-/* Slider */
+/* slider wrapper */
 .slider-wrapper {
     position: relative;
     padding: 0 30px;
 }
 
-/* Slider track */
+/* slider track */
 .movie-slider {
     display: flex;
     overflow-x: auto;
@@ -114,7 +114,7 @@ html, body {
     display: none;
 }
 
-/* SliderCards */
+/* slider cards */
 .movie-slider .slider-card {
     min-width: 200px;
     flex: 0 0 auto;
@@ -123,6 +123,8 @@ html, body {
 
 .movie-slider .slider-card img {
     width: 100%;
+    height: 280px;
+    object-fit: cover;
     border-radius: 8px;
     transition: transform 0.3s, box-shadow 0.3s;
 }
@@ -132,7 +134,7 @@ html, body {
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
 }
 
-/* Slider Arrows btn */
+/* slider arrow btn */
 .slide-btn {
     position: absolute;
     top: 40%;
@@ -156,14 +158,14 @@ html, body {
 .slide-btn.left  { left: 0; }
 .slide-btn.right { right: 0; }
 
-/* Trailer modal */
+/* trailer modal */
 .modal-content.bg-dark {
     border: 1px solid rgba(255,255,255,0.1);
     border-radius: 12px;
     overflow: hidden;
 }
 
-/* footer separation */
+/* form separator */
 .footer-separator {
     border: none;
     height: 2px;
@@ -204,7 +206,7 @@ footer {
 #backToTop:hover  { transform: scale(1.1); }
 #backToTop.show   { opacity: 1; visibility: visible; }
 
-/* responsive for tablet */
+/* responsive tablet */
 @media (max-width: 768px) {
     .carousel-item,
     .carousel-img {
@@ -215,12 +217,16 @@ footer {
         min-width: 150px;
     }
 
+    .movie-slider .slider-card img {
+        height: 200px;
+    }
+
     .movie-slider {
         gap: 14px;
     }
 }
 
-/* for mobile */
+/* responsive mobile */
 @media (max-width: 576px) {
     /* Carousel */
     .carousel-item,
@@ -228,9 +234,13 @@ footer {
         height: 200px;
     }
 
-    /* Slider cards — show ~2.5 per screen */
+    /* Slider cards  */
     .movie-slider .slider-card {
         min-width: 110px;
+    }
+
+    .movie-slider .slider-card img {
+        height: 150px;
     }
 
     .movie-slider {
@@ -242,7 +252,7 @@ footer {
         padding: 0 36px;
     }
 
-    /* Arrow buttons smaller */
+    /* Arrow buttons */
     .slide-btn {
         width: 28px;
         height: 28px;
