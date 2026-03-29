@@ -5,7 +5,7 @@ html, body {
     background: linear-gradient(90deg, #141e30, #243b55);
 }
 
-/* Navbar */
+/* ===== NAVBAR ===== */
 .custom-navbar {
     background: linear-gradient(90deg, #141e30, #243b55);
     padding: 15px;
@@ -26,14 +26,13 @@ html, body {
     transform: translateY(-2px);
 }
 
-/* Carousel */
+/* ===== CAROUSEL ===== */
 .carousel-item,
 .carousel-img {
     height: 550px;
     object-fit: cover;
 }
 
-/* Carousel caption styling */
 .carousel-caption h5 {
     font-size: 1.5rem;
     font-weight: 700;
@@ -44,7 +43,7 @@ html, body {
     text-shadow: 0 1px 4px rgba(0,0,0,0.8);
 }
 
-/* Search */
+/* ===== SEARCH ===== */
 .search-section {
     padding-top: 3rem;
     padding-bottom: 3rem;
@@ -65,7 +64,7 @@ html, body {
     border-radius: 20px;
 }
 
-/* Clear button */
+/* ===== CLEAR BUTTON ===== */
 .clear-btn {
     position: absolute;
     top: 50%;
@@ -83,7 +82,7 @@ html, body {
     color: white;
 }
 
-/* Movie grid cards */
+/* ===== MOVIE GRID CARDS ===== */
 .movie-card {
     transition: transform 0.3s, box-shadow 0.3s;
     border: 1px solid rgba(255,255,255,0.08);
@@ -94,7 +93,13 @@ html, body {
     box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5) !important;
 }
 
-/* Movie Slider */
+/* ===== SLIDER WRAPPER ===== */
+.slider-wrapper {
+    position: relative;
+    padding: 0 30px;
+}
+
+/* ===== SLIDER TRACK ===== */
 .movie-slider {
     display: flex;
     overflow-x: auto;
@@ -105,48 +110,15 @@ html, body {
     scrollbar-width: none;
 }
 
+.movie-slider::-webkit-scrollbar {
+    display: none;
+}
+
+/* ===== SLIDER CARDS ===== */
 .movie-slider .slider-card {
     min-width: 200px;
     flex: 0 0 auto;
     cursor: pointer;
-}
-
-/* Mobile: smaller cards so more fit on screen */
-@media (max-width: 576px) {
-    .movie-slider .slider-card {
-        min-width: 120px;
-    }
-
-    .movie-slider {
-        gap: 12px;
-    }
-
-    .slide-btn {
-        width: 32px;
-        height: 32px;
-        font-size: 16px;
-    }
-
-    .slider-wrapper {
-        padding: 0 20px;
-    }
-
-    .carousel-item,
-    .carousel-img {
-        height: 220px;
-    }
-}
-
-/* Tablet: medium cards */
-@media (min-width: 577px) and (max-width: 768px) {
-    .movie-slider .slider-card {
-        min-width: 150px;
-    }
-
-    .carousel-item,
-    .carousel-img {
-        height: 350px;
-    }
 }
 
 .movie-slider .slider-card img {
@@ -160,15 +132,7 @@ html, body {
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
 }
 
-.movie-slider::-webkit-scrollbar {
-    display: none;
-}
-
-.slider-wrapper {
-    position: relative;
-    padding: 0 30px;
-}
-
+/* ===== SLIDER ARROW BUTTONS ===== */
 .slide-btn {
     position: absolute;
     top: 40%;
@@ -189,22 +153,17 @@ html, body {
     color: #141e30;
 }
 
-.slide-btn.left {
-    left: 0;
-}
+.slide-btn.left  { left: 0; }
+.slide-btn.right { right: 0; }
 
-.slide-btn.right {
-    right: 0;
-}
-
-/* Trailer modal */
+/* ===== TRAILER MODAL ===== */
 .modal-content.bg-dark {
     border: 1px solid rgba(255,255,255,0.1);
     border-radius: 12px;
     overflow: hidden;
 }
 
-/* Footer separator */
+/* ===== FOOTER SEPARATOR ===== */
 .footer-separator {
     border: none;
     height: 2px;
@@ -213,14 +172,14 @@ html, body {
     opacity: 0.5;
 }
 
-/* Footer */
+/* ===== FOOTER ===== */
 footer {
     background: linear-gradient(90deg, #141e30, #243b55);
     padding: 20px 0;
     color: #fff;
 }
 
-/* Back to top */
+/* ===== BACK TO TOP ===== */
 #backToTop {
     position: fixed;
     bottom: 30px;
@@ -242,19 +201,61 @@ footer {
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
 }
 
-#backToTop:hover {
-    transform: scale(1.1);
+#backToTop:hover  { transform: scale(1.1); }
+#backToTop.show   { opacity: 1; visibility: visible; }
+
+/* ===================================================
+   RESPONSIVE — tablet (max 768px)
+   =================================================== */
+@media (max-width: 768px) {
+    .carousel-item,
+    .carousel-img {
+        height: 350px;
+    }
+
+    .movie-slider .slider-card {
+        min-width: 150px;
+    }
+
+    .movie-slider {
+        gap: 14px;
+    }
 }
 
-#backToTop.show {
-    opacity: 1;
-    visibility: visible;
-}
-
-/* Mobile: slider section headings */
+/* ===================================================
+   RESPONSIVE — mobile (max 576px)
+   =================================================== */
 @media (max-width: 576px) {
-    section.container h2 {
-        font-size: 1.1rem !important;
-        margin-bottom: 0.5rem !important;
+    /* Carousel */
+    .carousel-item,
+    .carousel-img {
+        height: 200px;
+    }
+
+    /* Slider cards — show ~2.5 per screen */
+    .movie-slider .slider-card {
+        min-width: 110px;
+    }
+
+    .movie-slider {
+        gap: 10px;
+    }
+
+    /* Slider wrapper — less side padding so cards have more room */
+    .slider-wrapper {
+        padding: 0 36px;
+    }
+
+    /* Arrow buttons — smaller */
+    .slide-btn {
+        width: 28px;
+        height: 28px;
+        font-size: 14px;
+    }
+
+    /* Section headings */
+    .section-heading {
+        font-size: 1rem;
+        margin-bottom: 0.6rem;
     }
 }
